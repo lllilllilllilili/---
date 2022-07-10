@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Slf4j
-@Component
+//@Component
 public class FieldLogTrace implements LogTrace{
 
     private static final String START_PREFIX = "-->";
