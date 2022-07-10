@@ -3,8 +3,8 @@ package hello.advanced.trace;
 import java.util.UUID;
 
 public class TraceId {
-    private String id;
-    private int level;
+    private final String id;
+    private final int level;
 
     public TraceId() {
         this.id = createId();
@@ -16,19 +16,19 @@ public class TraceId {
         this.level = level;
     }
 
-    private String createId() {
+    public String createId() {
         return UUID.randomUUID().toString().substring(0, 8);
     }
 
-    private TraceId createNextId() {
+    public TraceId createNextId() {
         return new TraceId(id, level + 1);
     }
 
-    private TraceId createPreviousId() {
+    public TraceId createPreviousId() {
         return new TraceId(id, level - 1);
     }
 
-    private boolean isFirstLevel() {
+    public boolean isFirstLevel() {
         return level == 0;
     }
 
